@@ -1,6 +1,9 @@
 "use client"
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { MotionConfig, motion } from 'framer-motion'
+import archives from '../data/archives.json'
+
+const heroImage = (archives as any).body?.[0]?.image || ''
 
 export default function Hero(){
   return (
@@ -15,7 +18,7 @@ export default function Hero(){
           </div>
         </div>
         <motion.div initial={{opacity:0.6}} animate={{opacity:1}} className="rounded-sm overflow-hidden shadow-lg" aria-hidden>
-          <div className="relative h-80 md:h-96 bg-cover bg-center" style={{backgroundImage:`url('/hero-sample.jpg')`}}>
+          <div className="relative h-80 md:h-96 bg-cover bg-center" style={{backgroundImage:`url('${heroImage}')`}}>
             <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-2 text-xs text-stone">
               NEW YORK · 1918 · PRIMARY SOURCE
             </div>

@@ -2,6 +2,9 @@
 import Link from 'next/link'
 import { MotionConfig, motion } from 'framer-motion'
 import { Menu } from 'lucide-react'
+import archives from '../data/archives.json'
+
+const heroImage = (archives as any).body?.[0]?.image || '/hero-sample.jpg'
 
 export default function Header(){
   return (
